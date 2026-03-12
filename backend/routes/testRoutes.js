@@ -1,5 +1,5 @@
 const express = require("express");
-const { protect, recruiterOnly } = require("../middleware/authMiddleware");
+const protect = require("../middleware/authMiddleware");
 
 const router = express.Router();
 
@@ -9,11 +9,6 @@ router.get("/profile", protect, (req, res) => {
     message: "Access granted",
     user: req.user,
   });
-});
-
-// Recruiter only
-router.get("/recruiter", protect, recruiterOnly, (req, res) => {
-  res.json({ message: "Recruiter access granted" });
 });
 
 module.exports = router;

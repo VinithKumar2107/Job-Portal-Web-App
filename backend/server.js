@@ -11,9 +11,9 @@ const cors = require("cors");
 
 const app = express();
 
-// Allow requests from React frontend
+// Allow requests from React frontend (both local and potentially production)
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: ["http://localhost:3000", "https://job-portal-api.onrender.com"], // Add your frontend URL here later
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 }));
