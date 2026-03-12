@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "start": "concurrently \"npm start --prefix backend\" \"npm start --prefix frontend\"",
+    "start:backend": "npm start --prefix backend",
+    "start:frontend": "npm start --prefix frontend"
+  },
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
@@ -7,5 +12,8 @@
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.2.3",
     "web-vitals": "^5.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
   }
 }
